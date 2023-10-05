@@ -5,6 +5,7 @@ export default defineNuxtConfig({
     strict: true,
   },
   modules: ['@nuxtjs/strapi'],
+  plugins: ['./plugins/markdown.ts'],
   strapi: {
     url: process.env.STRAPI_URL || 'http://localhost:1337',
   },

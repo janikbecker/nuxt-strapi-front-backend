@@ -1,6 +1,7 @@
 <template>
     <article v-if="post">
         <Intro :post="post" />
+        <Content :content="post.Content" />
 
     </article>
 </template>
