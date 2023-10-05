@@ -8,21 +8,21 @@
     </div>
 </template>
 
- <script setup lang="ts">
+<script setup lang="ts">
 
- const { find } = useStrapi();
+const { find } = useStrapi();
 
- const { data: posts } = await useAsyncData('posts', () => 
- find('posts'), {
-         transform: (data: any) => {
-             if (data.data) {
-                 return data.data.map((post: any) => post.attributes);
-             } else {
-                 return null;
-             }
-         },
-     }
- );
+const { data: posts } = await useAsyncData('posts', () =>
+    find('posts'), {
+    transform: (data: any) => {
+        if (data.data) {
+            return data.data.map((post: any) => post.attributes);
+        } else {
+            return null;
+        }
+    },
+}
+);
 
 </script>
 
