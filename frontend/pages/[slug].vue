@@ -1,5 +1,8 @@
 <template>
-    <h1>{{ post }}</h1>
+    <article v-if="post">
+        <Intro :post="post" />
+
+    </article>
 </template>
 
 <script setup lang="ts">
