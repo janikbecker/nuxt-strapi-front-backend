@@ -2,7 +2,9 @@
 import { Style } from '#build/components';
 <template>
     <header>
-        <a href="/"><div class="logo">reFreash</div></a>
+        <NuxtLink to="/">
+            <div class="logo">Homepage</div>
+        </NuxtLink>
     </header>
 </template>
 

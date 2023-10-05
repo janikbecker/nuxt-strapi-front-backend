@@ -3,7 +3,9 @@
         <h1>Blog</h1>
         <p>Hier findest du alle meine Blogposts. Viel Spaß beim Lesen!</p>
 
-        {{ posts }}
+        <div class="posts">
+            <PostSneak v-for="post in posts" :post="post" :key="post.Title" />
+        </div>
 
     </div>
 </template>
