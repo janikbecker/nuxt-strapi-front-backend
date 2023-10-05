@@ -3,25 +3,26 @@
         <h1>Blog</h1>
         <p>Hier findest du alle meine Blogposts. Viel Spaß beim Lesen!</p>
 
-        {{ posts[0].Title }}
+        {{ posts }}
 
     </div>
 </template>
 
-<script setup lang="ts">
-const { find } = useStrapi();
+ <script setup lang="ts">
 
-const { data: posts } = await useAsyncData('posts', () => 
-find<StrapiResponse<SrapiBase<Post>[]>>('posts'), {
-        transform: (data: any) => {
-            if (data.data) {
-                return data.data.map((post: any) => post.attributes);
-            } else {
-                return null;
-            }
-        },
-    }
-);
+ const { find } = useStrapi();
+
+ const { data: posts } = await useAsyncData('posts', () => 
+ find('posts'), {
+         transform: (data: any) => {
+             if (data.data) {
+                 return data.data.map((post: any) => post.attributes);
+             } else {
+                 return null;
+             }
+         },
+     }
+ );
 
 </script>
 
