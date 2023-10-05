@@ -22,7 +22,7 @@ declare global {
         publishedAt: Date;
     }
     interface Post extends StrapiAttributes {
-        Titel: string;
+        Title: string;
         Slug: string;
         Intro: string;
         Content: string;
